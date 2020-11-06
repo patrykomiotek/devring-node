@@ -20,7 +20,13 @@ app.post('/', (req, res) => {
   res.json({ 'ok': true });
 });
 
-app.listen(PORT);
+app.listen(PORT, (err) => {
+  if (err) {
+    throw err;
+  } else {
+    console.log(`Listening on port ${PORT}`);
+  }
+});
 
 // http.createServer(function(request, response) {
 //   const responseData = {
