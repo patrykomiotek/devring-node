@@ -26,3 +26,27 @@ Run with nodemon:
 ```bash
 npm start
 ```
+
+# Install Babel (optional)
+
+Run command:
+
+```bash
+npm install @babel/core @babel/node --save-dev
+```
+
+Install presets
+
+```bash
+npm install @babel/preset-env --save-dev
+```
+
+Create `.babelrc` with:
+
+```json
+{
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
+```
