@@ -1,9 +1,13 @@
 const express = require('express');
-const { allowedNodeEnvironmentFlags } = require('process');
+const bodyParser = require('body-parser');
+// compression
+// helmet
+// cors
 
 const PORT = 3000;
 
 const app = express();
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello word!');
@@ -15,7 +19,8 @@ app.get('/ping', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  console.log(req.body);
+  // console.log('body', req.body);
+  console.log('body', JSON.stringify(req.body, null, 2));
 
   res.json({ 'ok': true });
 });

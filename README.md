@@ -55,3 +55,16 @@ Install Express
 ```bash
 npm install express
 ```
+
+Install body parser:
+
+```bash
+npm install body-parser
+```
+
+Test your request:
+
+```bash
+curl -i -XPOST -d '{"param1": "foo", "param2": "bar"}' -H "Content-Type: application/json" http://localhost:3000/
+```
+
