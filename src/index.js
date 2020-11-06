@@ -1,4 +1,5 @@
 const express = require('express');
+const { allowedNodeEnvironmentFlags } = require('process');
 
 const PORT = 3000;
 
@@ -11,6 +12,12 @@ app.get('/', (req, res) => {
 app.get('/ping', (req, res) => {
   // res.status(202).json({status: 'ok'});
   res.json({status: 'ok'});
+});
+
+app.post('/', (req, res) => {
+  console.log(req.body);
+
+  res.json({ 'ok': true });
 });
 
 app.listen(PORT);
