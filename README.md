@@ -50,3 +50,8 @@ Create `.babelrc` with:
   ]
 }
 ```
+
+Install Express
+```bash
+npm install express
+```
