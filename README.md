@@ -68,3 +68,8 @@ Test your request:
 curl -i -XPOST -d '{"param1": "foo", "param2": "bar"}' -H "Content-Type: application/json" http://localhost:3000/
 ```
 
+Install
+
+```bash
+npm install http-status
+```

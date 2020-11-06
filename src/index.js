@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const HTTPStatus = require('http-status');
 // compression
 // helmet
 // cors
@@ -11,6 +12,15 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello word!');
+});
+
+app.get('/users/:idUser', (req, res) => {
+  if (parseInt(req.params.idUser) === 123) {
+    res.status(HTTPStatus.OK).json({'found': true});
+  } else {
+    res.status(HTTPStatus.NOT_FOUND).json({'found': false});
+  }
+
 });
 
 app.get('/ping', (req, res) => {
@@ -27,6 +37,7 @@ app.post('/', (req, res) => {
 
 app.listen(PORT, (err) => {
   if (err) {
+    console.log('Error: ', err);
     throw err;
   } else {
     console.log(`Listening on port ${PORT}`);
